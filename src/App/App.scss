@@ -1,0 +1,114 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+:root {
+  --color-text-primary: #24292e;
+  --color-white: #fff;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+  font-size: 1.6rem;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+.container {
+  width: 95%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: aquamarine;
+}
+
+.grid {
+  display: grid;
+  grid-template-rows: 10rem 10rem 100%;
+  grid-template-columns: 1fr 3fr;
+  grid-template-areas:
+    "head head"
+    "profile searchbar"
+    "profile repo-list"
+  ;
+}
+
+.header {
+  grid-area: head;
+  background-color: #fff;
+}
+
+.searchbar {
+  grid-area: searchbar;
+  background-color: chocolate;
+
+  &_input {
+    width: 50%;
+    padding: .5rem 1.2rem;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    color: var(--color-text-primary);
+    border-radius: .6rem;
+
+    &:focus {
+      outline: none;
+      border-color: #0366d6;
+      box-shadow: 0 0 0 3px rgba(3, 102, 214, .3);
+    }
+  }
+}
+
+.navbar {
+
+  &_list {
+    display: flex;
+    margin-left: 31rem;
+
+    &_item {
+      display: flex;
+      // border: 1px solid #000;
+      padding: .8rem 1.6rem;
+      align-items: center;
+      border-bottom: 2px solid transparent;
+      transition: border-bottom-color .12s ease-out;
+
+      &:hover {
+        border-bottom-color: #d1d5da;
+      }
+    }
+
+    &_item + &_item {
+      margin-left: 5px;
+    }
+
+    & .selected {
+      font-weight: 600;
+      color: #24292e;
+      border-bottom-color: #f9826c;
+    }
+
+    &_link {}
+  }
+}
+
+.octicon {
+  display: inline-block;
+  overflow: visible!important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+  margin-right: .4rem;
+}
