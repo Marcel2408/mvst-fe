@@ -9,6 +9,7 @@
 :root {
   --color-text-primary: #24292e;
   --color-white: #fff;
+  --color-selected: #f9826c;
 }
 
 html {
@@ -33,12 +34,11 @@ body {
   width: 95%;
   max-width: 1200px;
   margin: 0 auto;
-  background-color: aquamarine;
 }
 
 .grid {
   display: grid;
-  grid-template-rows: 10rem 10rem 100%;
+  grid-template-rows: 7rem 7rem 100%;
   grid-template-columns: 1fr 3fr;
   grid-template-areas:
     "head head"
@@ -50,6 +50,10 @@ body {
 .header {
   grid-area: head;
   background-color: #fff;
+  border-bottom: 1px solid #e1e4e8;
+
+  display: flex;
+  align-items: flex-end;
 }
 
 .searchbar {
@@ -85,6 +89,7 @@ body {
       align-items: center;
       border-bottom: 2px solid transparent;
       transition: border-bottom-color .12s ease-out;
+      cursor: pointer;
 
       &:hover {
         border-bottom-color: #d1d5da;
@@ -98,7 +103,22 @@ body {
     & .selected {
       font-weight: 600;
       color: #24292e;
-      border-bottom-color: #f9826c;
+      border-bottom-color: var(--color-selected);
+    }
+
+    .counter {
+      display: inline-block;
+      margin-left: 4px;
+      min-width: 2rem;
+      padding: 0 6px;
+      font-size: 1.2rem;
+      font-weight: 500;
+      line-height: 1.8rem;
+      color: #24292e;
+      text-align: center;
+      background-color: rgba(209, 213, 218, .5);
+      border: 1px solid transparent;
+      border-radius: 2em;
     }
 
     &_link {}

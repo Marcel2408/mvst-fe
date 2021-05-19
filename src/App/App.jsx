@@ -20,6 +20,7 @@ function App() {
               <li className="navbar_list_item selected">
                 <RepositoryIcon />
                 Repositories
+                <span className="counter" title="35">35</span>
               </li>
               <li className="navbar_list_item">
                 <ProjectIcon />
