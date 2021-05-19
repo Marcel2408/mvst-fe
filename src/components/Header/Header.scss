@@ -8,14 +8,14 @@
 }
 
 .navbar {
+  margin-left: 34rem;
 
   &_list {
     display: flex;
-    margin-left: 31rem;
+    color: var(--color-text-primary);
 
     &_item {
       display: flex;
-      // border: 1px solid #000;
       padding: .8rem 1.6rem;
       align-items: center;
       border-bottom: 2px solid transparent;

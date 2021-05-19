@@ -1,14 +1,10 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-
+import Icon from '../Icon/CustomIcon';
 import './Header.scss';
-import { ReactComponent as OverviewIcon } from '../../assets/icons/overview.svg';
-import { ReactComponent as RepositoryIcon } from '../../assets/icons/repository.svg';
-import { ReactComponent as ProjectIcon } from '../../assets/icons/project.svg';
-import { ReactComponent as PackageIcon } from '../../assets/icons/package.svg';
 
 /**
- * Functional React component displaying the grid template
+ * Functional React component displaying the header component
  * @function Header
  * @returns {JSX.Element} - Rendered header component
  */
@@ -18,20 +14,20 @@ const Header = () => (
     <nav className="navbar">
       <ul className="navbar_list">
         <li className="navbar_list_item">
-          <OverviewIcon />
+          <Icon icon="overview" />
           <a className="navbar_list_link">Overview</a>
         </li>
         <li className="navbar_list_item selected">
-          <RepositoryIcon />
+          <Icon icon="repository" />
           Repositories
           <span className="counter" title="35">35</span>
         </li>
         <li className="navbar_list_item">
-          <ProjectIcon />
+          <Icon icon="project" />
           Projects
         </li>
         <li className="navbar_list_item">
-          <PackageIcon />
+          <Icon icon="package" />
           Packages
         </li>
       </ul>
