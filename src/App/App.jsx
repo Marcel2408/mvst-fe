@@ -5,11 +5,12 @@ import { ReactComponent as OverviewIcon } from '../assets/icons/overview.svg';
 import { ReactComponent as RepositoryIcon } from '../assets/icons/repository.svg';
 import { ReactComponent as ProjectIcon } from '../assets/icons/project.svg';
 import { ReactComponent as PackageIcon } from '../assets/icons/package.svg';
+import PageGrid from '../templates/PageGrid/PageGrid';
 
 function App() {
   return (
-    <div className="app container">
-      <div className="grid">
+    <div className="app">
+      <PageGrid>
         <header className="header">
           <nav className="navbar">
             <ul className="navbar_list">
@@ -32,6 +33,7 @@ function App() {
               </li>
             </ul>
           </nav>
+
         </header>
         <div className="searchbar">
           <input type="search" className="searchbar_input" placeholder="Find a repository..." />
@@ -44,7 +46,7 @@ function App() {
             <button type="button" className="new-repo_btn">New</button>
           </div>
         </div>
-      </div>
+      </PageGrid>
     </div>
   );
 }

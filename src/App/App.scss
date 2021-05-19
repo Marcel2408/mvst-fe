@@ -10,6 +10,9 @@
   --color-text-primary: #24292e;
   --color-white: #fff;
   --color-selected: #f9826c;
+
+  --border-bottom: 1px solid #e1e4e8;
+  ;
 }
 
 html {
@@ -36,21 +39,10 @@ body {
   margin: 0 auto;
 }
 
-.grid {
-  display: grid;
-  grid-template-rows: 7rem 7rem 100%;
-  grid-template-columns: 1fr 3fr;
-  grid-template-areas:
-    "head head"
-    "profile searchbar"
-    "profile repo-list"
-  ;
-}
-
 .header {
   grid-area: head;
   background-color: #fff;
-  border-bottom: 1px solid #e1e4e8;
+  border-bottom: var(--border-bottom);
 
   display: flex;
   align-items: flex-end;
@@ -58,7 +50,8 @@ body {
 
 .searchbar {
   grid-area: searchbar;
-  background-color: chocolate;
+  border-bottom: var(--border-bottom);
+
 
   &_input {
     width: 50%;
