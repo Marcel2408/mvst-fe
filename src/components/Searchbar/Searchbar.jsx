@@ -9,7 +9,7 @@ import './Searchbar.scss';
  * @function Searchbar
  * @returns {JSX.Element} - Rendered Searchbar Component
  */
-
+// onChange={debounce((e) => this.props.onChange(e.target.value))}
 const Searchbar = () => (
 
   <div className="searchbar">
