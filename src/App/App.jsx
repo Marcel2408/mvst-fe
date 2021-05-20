@@ -4,7 +4,7 @@ import HomePageContainer from '../HOC/HomePageContainer/HomePageContainer';
 
 function App() {
   return (
-    <div className="app">
+    <div data-test="component-app" className="app">
       <HomePageContainer />
     </div>
   );

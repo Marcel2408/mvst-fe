@@ -1,8 +1,17 @@
-import { render, screen } from '@testing-library/react';
+/* eslint-disable react/jsx-filename-extension */
+import React from 'react';
+import { shallow } from 'enzyme';
 import App from './App';
+import findByTestAttr from '../../test/testUtils';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+/**
+ * Setup fn for the App component
+ * @returns {ShallowWrapper}
+ */
+const setup = () => shallow(<App />);
+
+test('renders page template without error', () => {
+  const wrapper = setup();
+  const app = findByTestAttr(wrapper, 'component-app');
+  expect(app).toHaveLength(1);
 });
