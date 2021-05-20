@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Button from '../Button/CustomButton';
 import Icon from '../Icon/CustomIcon';
 
@@ -7,14 +8,15 @@ import './Profile.scss';
 /**
  * Functional React component displaying the Profile component
  * @function Profile
+ * @param {object} profileData - data to display the user info
  * @returns {JSX.Element} - Rendered Profile Component
  */
 
-const Profile = () => (
+const Profile = ({ profileData }) => (
   <section className="profile">
     <div className="avatar">
       <div className="avatar_container">
-        <img src="https://avatars.githubusercontent.com/u/50625838?u=12f0f736f5d063063e8d06c9c968ba9639101735&v=4" alt="profile" className="avatar_pic" />
+        <img src={profileData.avatarUrl} alt="profile" className="avatar_pic" />
       </div>
       <div className="avatar_status">
         <Icon icon="smiley" />
@@ -22,14 +24,13 @@ const Profile = () => (
     </div>
     <div className="info">
       <h1 className="info_fullname">
-        Marcel Subirana Campanera
+        {profileData.name}
       </h1>
       <h3 className="info_username">
-        Marcel2408
+        {profileData.login}
       </h3>
       <p className="info_description">
-        Software engineer with strong product development background,
-        experienced in JavaScript technologies in both frontend and backend.
+        {profileData.bio}
       </p>
     </div>
     <div className="edit-btn">
@@ -39,5 +40,16 @@ const Profile = () => (
     </div>
   </section>
 );
+
+Profile.propTypes = {
+  profileData: PropTypes.shape(
+    {
+      avatarUrl: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      bio: PropTypes.string.isRequired,
+      login: PropTypes.string.isRequired,
+    },
+  ).isRequired,
+};
 
 export default Profile;
