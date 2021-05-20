@@ -6,7 +6,7 @@ import HomePage from '../../pages/HomePage/HomePage';
 
 const GET_REPOSITORIES = gql`
 query {
-  user(login: "marcel2408") {
+  user(login: "rodrigopk") {
     id
     name
     url

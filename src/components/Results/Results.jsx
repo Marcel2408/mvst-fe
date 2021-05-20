@@ -1,5 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import Icon from '../Icon/CustomIcon';
 
 import './Results.scss';
@@ -9,14 +11,14 @@ import './Results.scss';
  * @function Results
  * @returns {JSX.Element} - Rendered Results Component
  */
-const Results = () => (
-  <div className="results show-results">
+const Results = ({ resultsCount, searchValue }) => (
+  <div className="results">
     <p className="results_text">
-      <span className="strong">2</span>
+      <span className="strong">{resultsCount}</span>
       {' '}
       results for repositories matching
       {' '}
-      <span className="strong">mv</span>
+      <span className="strong">{searchValue}</span>
       {' '}
       sorted by
       {' '}
@@ -34,5 +36,10 @@ const Results = () => (
     </div>
   </div>
 );
+
+Results.propTypes = {
+  resultsCount: PropTypes.number.isRequired,
+  searchValue: PropTypes.string.isRequired,
+};
 
 export default Results;

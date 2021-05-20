@@ -11,7 +11,7 @@ import './Searchbar.scss';
  * @returns {JSX.Element} - Rendered Searchbar Component
  */
 // onChange={debounce((e) => this.props.onChange(e.target.value))}
-const Searchbar = ({ handleOnChange }) => (
+const Searchbar = ({ handleOnChange, searchValue, resultsCount }) => (
 
   <div className="searchbar">
     <div className="searchbar_wrapper">
@@ -40,13 +40,19 @@ const Searchbar = ({ handleOnChange }) => (
       </div>
     </div>
 
-    <Results />
+    {
+      searchValue
+        ? <Results resultsCount={resultsCount} searchValue={searchValue} />
+        : null
+}
 
   </div>
 );
 
 Searchbar.propTypes = {
   handleOnChange: PropTypes.func.isRequired,
+  resultsCount: PropTypes.number.isRequired,
+  searchValue: PropTypes.string.isRequired,
 };
 
 export default Searchbar;

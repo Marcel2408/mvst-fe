@@ -17,12 +17,14 @@ import './HomePage.scss';
 
 const HomePage = ({ userData }) => {
   const [repoList, setRepoList] = useState([]);
+  const [searchValue, setSearchValue] = useState('');
 
   const searchRepos = (e) => {
-    const valueSearch = e.target.value;
+    const { value } = e.target;
+    setSearchValue(value);
     setRepoList(() => userData.repoList.filter((list) => list.name
       .toLowerCase()
-      .includes(valueSearch.toLowerCase())));
+      .includes(value.toLowerCase())));
   };
 
   useEffect(() => {
@@ -31,7 +33,11 @@ const HomePage = ({ userData }) => {
   return (
     <PageGrid>
       <Header repoCount={userData.repoCount} />
-      <Searchbar handleOnChange={searchRepos} />
+      <Searchbar
+        handleOnChange={searchRepos}
+        searchValue={searchValue}
+        resultsCount={repoList.length}
+      />
       <Profile profileData={userData.profileData} />
       <RepoList list={repoList} />
     </PageGrid>
