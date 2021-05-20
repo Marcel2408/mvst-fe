@@ -5,6 +5,7 @@ import Button from '../Button/CustomButton';
 import Icon from '../Icon/CustomIcon';
 
 import './RepoItem.scss';
+import timeDiff from '../../helpers/timeDiff';
 
 /**
  * Functional React component displaying the RepoItem component
@@ -46,7 +47,7 @@ const RepoItem = ({ repo }) => (
           <span className="update_text">
             Updated
             {' '}
-            {repo.updatedAt}
+            {timeDiff(repo.updatedAt)}
           </span>
         </div>
       </div>

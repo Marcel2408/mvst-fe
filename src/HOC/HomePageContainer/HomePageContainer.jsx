@@ -6,14 +6,14 @@ import HomePage from '../../pages/HomePage/HomePage';
 
 const GET_REPOSITORIES = gql`
 query {
-  user(login: "rodrigopk") {
+  user(login: "marcel2408") {
     id
     name
     url
     bio
     avatarUrl
     login
-    repositories(first: 10) {
+    repositories(last: 10) {
       totalCount
       nodes {
         name
@@ -39,6 +39,12 @@ const HomePageContainer = () => {
     console.log(error);
     return <p>{error}</p>;
   }
+  const reposSortByDate = data.user.repositories.nodes
+    .map((repo) => ({ ...repo }))
+    .sort((a, b) => (
+      a.updatedAt > b.updatedAt ? -1 : 1
+    ));
+
   const userData = {
     profileData: {
       avatarUrl: data.user.avatarUrl,
@@ -47,7 +53,7 @@ const HomePageContainer = () => {
       login: data.user.login,
     },
     repoCount: data.user.repositories.totalCount,
-    repoList: data.user.repositories.nodes,
+    repoList: reposSortByDate,
   };
   return (
     <HomePage userData={userData} />
