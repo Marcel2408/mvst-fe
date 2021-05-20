@@ -8,9 +8,12 @@ import './Searchbar.scss';
 /**
  * Functional React component displaying the searchbar component
  * @function Searchbar
+ * @param {function} handleOnChange - updates the searchValue state
+ * and the repoList state on every user search
+ * @param {number} searchValue - user search value
+ * @param {number} resultsCount - length of the list matching the searchValue
  * @returns {JSX.Element} - Rendered Searchbar Component
  */
-// onChange={debounce((e) => this.props.onChange(e.target.value))}
 const Searchbar = ({ handleOnChange, searchValue, resultsCount }) => (
 
   <div className="searchbar">

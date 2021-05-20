@@ -10,6 +10,7 @@ import timeDiff from '../../helpers/timeDiff';
 /**
  * Functional React component displaying the RepoItem component
  * @function RepoItem
+ * @param {object} repo - contains all data for a single repo item
  * @returns {JSX.Element} - Rendered RepoItem Component
  */
 

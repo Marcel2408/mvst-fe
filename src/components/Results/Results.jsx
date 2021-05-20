@@ -9,6 +9,9 @@ import './Results.scss';
 /**
  * Functional React component displaying the Results component
  * @function Results
+ * @param {number} resultsCount - length of the list matching the searchValue
+ * @param {string} searchValue - user search value
+
  * @returns {JSX.Element} - Rendered Results Component
  */
 const Results = ({ resultsCount, searchValue }) => (
@@ -16,7 +19,9 @@ const Results = ({ resultsCount, searchValue }) => (
     <p className="results_text">
       <span className="strong">{resultsCount}</span>
       {' '}
-      results for repositories matching
+      {resultsCount === 1 ? 'result' : 'results'}
+      {' '}
+      for repositories matching
       {' '}
       <span className="strong">{searchValue}</span>
       {' '}
