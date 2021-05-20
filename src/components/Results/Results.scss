@@ -1,0 +1,40 @@
+.results {
+  height: 0;
+  padding:0;
+  display: flex;
+  justify-content: space-between;
+
+  &_text,
+  &_clear {
+    opacity: 0;
+  }
+
+  &.show-results {
+    height: 100%;
+    padding: 1.6rem 0;
+    border-top: var(--border-bottom);
+
+    & > * {
+      opacity: 1;
+    }
+  }
+
+  &_link {
+    color: var(--color-text-secondary);
+    font-weight: 400;
+    text-decoration: none;
+
+    &:hover {
+      color: var(--color-text-link);
+
+      .clear-icon {
+        background-color: var(--color-text-link);
+      }
+    }
+  }
+
+  .strong {
+    font-weight: 600;
+  }
+
+}

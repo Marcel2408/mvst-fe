@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from '../Button/CustomButton';
+import Results from '../Results/Results';
 
 import './Searchbar.scss';
 
@@ -10,25 +11,31 @@ import './Searchbar.scss';
  */
 
 const Searchbar = () => (
+
   <div className="searchbar">
-    <input type="search" className="searchbar_input" placeholder="Find a repository..." />
-    <div className="dropdown">
-      <Button kind="dropdown">
-        Type
-      </Button>
-      <Button kind="dropdown">
-        Language
-      </Button>
-      <Button kind="dropdown">
-        Sort
-      </Button>
+    <div className="searchbar_wrapper">
+      <input type="text" className="searchbar_input" placeholder="Find a repository..." />
+      <div className="dropdown">
+        <Button kind="dropdown">
+          Type
+        </Button>
+        <Button kind="dropdown">
+          Language
+        </Button>
+        <Button kind="dropdown">
+          Sort
+        </Button>
+      </div>
+
+      <div className="new-repo">
+        <Button kind="new-repo">
+          New
+        </Button>
+      </div>
     </div>
 
-    <div className="new-repo">
-      <Button kind="new-repo">
-        New
-      </Button>
-    </div>
+    <Results />
+
   </div>
 );
 

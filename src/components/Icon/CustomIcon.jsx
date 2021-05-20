@@ -9,6 +9,7 @@ import { ReactComponent as ProjectIcon } from '../../assets/icons/project.svg';
 import { ReactComponent as PackageIcon } from '../../assets/icons/package.svg';
 import { ReactComponent as SmileyIcon } from '../../assets/icons/smiley.svg';
 import { ReactComponent as StarIcon } from '../../assets/icons/star.svg';
+import { ReactComponent as ClearIcon } from '../../assets/icons/clear.svg';
 
 /**
  * Functional React component displaying the icon component
@@ -31,6 +32,8 @@ const CustomIcon = ({ icon }) => {
       return <SmileyIcon />;
     case 'star':
       return <StarIcon />;
+    case 'clear':
+      return <ClearIcon />;
     default:
       return null;
   }
