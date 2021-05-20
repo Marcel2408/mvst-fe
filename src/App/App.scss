@@ -8,12 +8,14 @@
 
 :root {
   --color-text-primary: #24292e;
+  --color-text-secondary: #586069;
   --color-white: #fff;
   --color-selected: #f9826c;
   --color-border-input: #e1e4e8;
   --color-border-input-focus: #0366d6;
   --color-btn-default: #fafbfc;
   --color-btn-primary: #2ea44f;
+  --color-text-link: #0366d6;
 
   --border-bottom: 1px solid #e1e4e8;
   ;
@@ -26,23 +28,71 @@ html {
 body {
   box-sizing: border-box;
   font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
+  line-height: 1.5;
 }
 
 .app {
   min-height: 100vh;
 }
 
-.section {
-  padding: 5rem 0;
-}
+.repo-list {
+  grid-area: repo-list;
 
-.container {
-  width: 95%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+  &_item {
+    display: flex;
+    justify-content: space-between;
+    padding: 2.4rem 0;
+    border-bottom: var(--border-bottom);
 
+    .item {
+
+      &_title {
+        display: inline-block;
+        margin-bottom: 4px;
+        font-weight: 600;
+        font-size: 2rem;
+      }
+
+      &_link {
+        color: var(--color-text-link);
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      &_info {
+        display: flex;
+        font-size: 1.2rem;
+        margin-top: .8rem;
+        color: var(--color-text-secondary);
+
+        &_language {
+          margin-right: 1.6rem;
+
+          .language-color {
+            background-color: #e34c26;
+            position: relative;
+            top: 1px;
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border: 1px solid rgba(27, 31, 35, .1);
+            border-radius: 50%;
+            margin-right: 3px;
+          }
+        }
+
+        &_stargazer {
+          margin-right: 1.6rem;
+        }
+      }
+    }
+
+  }
+}
 
 
 

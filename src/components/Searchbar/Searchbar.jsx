@@ -3,6 +3,12 @@ import Button from '../Button/CustomButton';
 
 import './Searchbar.scss';
 
+/**
+ * Functional React component displaying the searchbar component
+ * @function Searchbar
+ * @returns {JSX.Element} - Rendered Searchbar Component
+ */
+
 const Searchbar = () => (
   <div className="searchbar">
     <input type="search" className="searchbar_input" placeholder="Find a repository..." />
