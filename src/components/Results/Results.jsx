@@ -4,6 +4,11 @@ import Icon from '../Icon/CustomIcon';
 
 import './Results.scss';
 
+/**
+ * Functional React component displaying the Results component
+ * @function Results
+ * @returns {JSX.Element} - Rendered Results Component
+ */
 const Results = () => (
   <div className="results show-results">
     <p className="results_text">
