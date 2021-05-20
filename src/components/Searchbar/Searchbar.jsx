@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Button from '../Button/CustomButton';
 import Results from '../Results/Results';
-
+import debounce from '../../helpers/debounce';
 import './Searchbar.scss';
 
 /**
@@ -10,11 +11,16 @@ import './Searchbar.scss';
  * @returns {JSX.Element} - Rendered Searchbar Component
  */
 // onChange={debounce((e) => this.props.onChange(e.target.value))}
-const Searchbar = () => (
+const Searchbar = ({ handleOnChange }) => (
 
   <div className="searchbar">
     <div className="searchbar_wrapper">
-      <input type="text" className="searchbar_input" placeholder="Find a repository..." />
+      <input
+        type="text"
+        className="searchbar_input"
+        placeholder="Find a repository..."
+        onChange={debounce(handleOnChange)}
+      />
       <div className="dropdown">
         <Button kind="dropdown">
           Type
@@ -38,5 +44,9 @@ const Searchbar = () => (
 
   </div>
 );
+
+Searchbar.propTypes = {
+  handleOnChange: PropTypes.func.isRequired,
+};
 
 export default Searchbar;

@@ -18,13 +18,20 @@ import './HomePage.scss';
 const HomePage = ({ userData }) => {
   const [repoList, setRepoList] = useState([]);
 
+  const searchRepos = (e) => {
+    const valueSearch = e.target.value;
+    setRepoList(() => userData.repoList.filter((list) => list.name
+      .toLowerCase()
+      .includes(valueSearch.toLowerCase())));
+  };
+
   useEffect(() => {
     setRepoList(userData.repoList);
   }, []);
   return (
     <PageGrid>
       <Header repoCount={userData.repoCount} />
-      <Searchbar />
+      <Searchbar handleOnChange={searchRepos} />
       <Profile profileData={userData.profileData} />
       <RepoList list={repoList} />
     </PageGrid>

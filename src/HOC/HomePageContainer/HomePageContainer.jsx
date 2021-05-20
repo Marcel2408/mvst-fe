@@ -13,7 +13,7 @@ query {
     bio
     avatarUrl
     login
-    repositories(first: 3) {
+    repositories(first: 10) {
       totalCount
       nodes {
         name
