@@ -1,11 +1,8 @@
 import React from 'react';
 import { gql, useQuery } from '@apollo/client';
-import Header from '../../components/Header/Header';
-import Profile from '../../components/Profile/Profile';
-import RepoList from '../../components/Repo-list/RepoList';
-import Searchbar from '../../components/Searchbar/Searchbar';
-import PageGrid from '../../templates/PageGrid/PageGrid';
+
 import Spinner from '../../components/Spinner/Spinner';
+import HomePage from '../../pages/HomePage/HomePage';
 
 const GET_REPOSITORIES = gql`
 query {
@@ -35,7 +32,7 @@ query {
 }
 `;
 
-const AppContainer = () => {
+const HomePageContainer = () => {
   const { loading, error, data } = useQuery(GET_REPOSITORIES);
   if (loading) return <Spinner />;
   if (error) {
@@ -53,13 +50,8 @@ const AppContainer = () => {
     repoList: data.user.repositories.nodes,
   };
   return (
-    <PageGrid>
-      <Header repoCount={userData.repoCount} />
-      <Searchbar />
-      <Profile profileData={userData.profileData} />
-      <RepoList list={userData.repoList} />
-    </PageGrid>
+    <HomePage userData={userData} />
   );
 };
 
-export default AppContainer;
+export default HomePageContainer;

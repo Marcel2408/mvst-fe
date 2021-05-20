@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.scss';
-import AppContainer from '../HOC/AppContainer/AppContainer';
+import HomePageContainer from '../HOC/HomePageContainer/HomePageContainer';
 
 function App() {
   return (
     <div className="app">
-      <AppContainer />
+      <HomePageContainer />
     </div>
   );
 }
