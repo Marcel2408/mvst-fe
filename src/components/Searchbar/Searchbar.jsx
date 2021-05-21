@@ -23,6 +23,7 @@ const Searchbar = ({ handleOnChange, searchValue, resultsCount }) => (
         className="searchbar_input"
         placeholder="Find a repository..."
         onChange={debounce(handleOnChange)}
+        data-test="component-input"
       />
       <div className="dropdown">
         <Button kind="dropdown">
@@ -45,7 +46,7 @@ const Searchbar = ({ handleOnChange, searchValue, resultsCount }) => (
 
     {
       searchValue
-        ? <Results resultsCount={resultsCount} searchValue={searchValue} />
+        ? <Results resultsCount={resultsCount} searchValue={searchValue} data-test="component-results" />
         : null
 }
 

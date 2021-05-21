@@ -2,7 +2,7 @@
  * @method debounce
  * @param {function} func
  * @param {number} delay
- * @return {function} - Function to execute after the delay has passed
+ * @return {function} - Function invocation after the delay has passed
  */
 const debounce = (func, delay = 1000) => {
   let timeoutId;
