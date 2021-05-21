@@ -33,11 +33,17 @@ query {
 }
 `;
 
+/**
+ * Functional High Order React component querying data from the API
+ * @function HomePageContainer
+ * @param {object} userData - data from API to display the user info
+ * @returns {JSX.Element} - HomePage component
+ */
+
 const HomePageContainer = () => {
   const { loading, error, data } = useQuery(GET_REPOSITORIES);
   if (loading) return <Spinner />;
   if (error) {
-    console.log(error);
     return <p>{error}</p>;
   }
 

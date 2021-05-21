@@ -1,70 +1,96 @@
-# Getting Started with Create React App
+# MVST-challenge - Marcel Subirana
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Dear MVST team,
 
-## Available Scripts
+welcome to my version of the Github page!
 
-In the project directory, you can run:
+The project needs some steps to run properly as described below:
 
-### `npm start`
+## Get started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Clone the repo:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```bash
+$ git clone https://github.com/Marcel2408/mvst-fe.git
+$ cd mvst-fe
+```
 
-### `npm test`
+Install dependencies:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+$ npm install
+```
 
-### `npm run build`
+Create a ```.env```  in the server folder of this repo.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+$ touch .env
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Since this project fetches data from the Github v4 API, you will need your key token. Fill the file with the following info:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+REACT_APP_GITHUB_API_TOKEN=<Your GithubAPI token>
+```
 
-### `npm run eject`
+## Run the app
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Start the client:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+$ npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Being a CRA, by default it will run on localhost:3000.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Notes
 
-## Learn More
+Stack: React with Apollo Client, together with Sass as a CSS preprocessor.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+For linting I use ESLint with the Airbnb setup.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Relevant dependencies:
 
-### Code Splitting
+Use [@apollo/client](https://www.npmjs.com/package/@apollo/client) to fetch data from GraphQL and cache it.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Use [graphql](https://www.npmjs.com/package/graphql) to get the logic to query the API.
 
-### Analyzing the Bundle Size
+Use [moment](https://www.npmjs.com/package/moment) to correctly format the last update time of each repo.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Use [node-sass](https://www.npmjs.com/package/node-sass) to be able to style the app using ```.scss```files.
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+DevDependencies:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Use [Enzyme](https://www.npmjs.com/package/enzyme) with Jest to develop tests.
 
-### Deployment
+[@wojtekmaj/enzyme-adapter-react-17](https://www.npmjs.com/package/@wojtekmaj/enzyme-adapter-react-17): well maintained and with many downloads, yet unofficial package to adapt Enzyme to React 17.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Use [check-prop-types](https://www.npmjs.com/package/check-prop-types) to check the correct types in every component. Despite being an old package, it barely has any issue on npm and a decent amount of downloads per week.
 
-### `npm run build` fails to minify
+Use [commitizen](https://www.npmjs.com/package/commitizen) to keep clean an well structured commits.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+I decided to create a HOC 'HomePageContainer' to query the repositories from the GraphQL  Github v4API and make it available to the rest of the app. 
+
+In line 10 of HomePageContainer.jsx you can query for a user by introducing the login name, and it will be displayed on the screen.
+
+### Testing
+
+I added unit tests to the application. However, it is important to note that I only tested the following components: App, HomePage, Header and Searchbar,  as well as the helper methods. 
+
+Also, I didn't apply all possible tests to every component (for instance checking the correct render of all elements in a component) since this testing section has been thought for demonstration purposes.
+
+## Final comments
+
+I accomplished the requirements (search functionality) and tried to go for all extras, querying from the v4API via GraphQL documenting the code and adding unit tests.
+
+Thank you for the opportunity and I really hope you like it! 
+
+## About me
+
+Thank you for the opportunity and I really hope you like it!
+
+- Marcel Subirana - [Github](https://github.com/marcel2408) - [LinkedIn](https://www.linkedin.com/in/marcel-subirana-campanera/)
+
+ 

@@ -30,6 +30,7 @@ const HomePage = ({ userData }) => {
   useEffect(() => {
     setRepoList(userData.repoList);
   }, []);
+
   return (
     <div data-test="component-homepage">
       <PageGrid data-test="component-grid">
