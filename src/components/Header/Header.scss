@@ -52,7 +52,9 @@
       border-radius: 2em;
     }
 
-    &_link {}
+    &_link {
+      text-decoration: none;
+    }
   }
 }
 

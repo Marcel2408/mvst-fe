@@ -2,7 +2,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import App from './App';
-import findByTestAttr from '../../test/testUtils';
+import { findByTestAttr } from '../../test/testUtils';
 
 /**
  * Setup fn for the App component

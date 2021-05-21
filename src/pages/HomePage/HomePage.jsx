@@ -31,16 +31,18 @@ const HomePage = ({ userData }) => {
     setRepoList(userData.repoList);
   }, []);
   return (
-    <PageGrid>
-      <Header repoCount={userData.repoCount} />
-      <Searchbar
-        handleOnChange={searchRepos}
-        searchValue={searchValue}
-        resultsCount={repoList.length}
-      />
-      <Profile profileData={userData.profileData} />
-      <RepoList list={repoList} />
-    </PageGrid>
+    <div data-test="component-homepage">
+      <PageGrid data-test="component-grid">
+        <Header repoCount={userData.repoCount} />
+        <Searchbar
+          handleOnChange={searchRepos}
+          searchValue={searchValue}
+          resultsCount={repoList.length}
+        />
+        <Profile profileData={userData.profileData} />
+        <RepoList list={repoList} />
+      </PageGrid>
+    </div>
   );
 };
 

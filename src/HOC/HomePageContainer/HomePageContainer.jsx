@@ -3,6 +3,7 @@ import { gql, useQuery } from '@apollo/client';
 
 import Spinner from '../../components/Spinner/Spinner';
 import HomePage from '../../pages/HomePage/HomePage';
+import reposSortByDate from '../../helpers/reposSortByDate';
 
 const GET_REPOSITORIES = gql`
 query {
@@ -39,11 +40,6 @@ const HomePageContainer = () => {
     console.log(error);
     return <p>{error}</p>;
   }
-  const reposSortByDate = data.user.repositories.nodes
-    .map((repo) => ({ ...repo }))
-    .sort((a, b) => (
-      a.updatedAt > b.updatedAt ? -1 : 1
-    ));
 
   const userData = {
     profileData: {
@@ -53,7 +49,7 @@ const HomePageContainer = () => {
       login: data.user.login,
     },
     repoCount: data.user.repositories.totalCount,
-    repoList: reposSortByDate,
+    repoList: reposSortByDate(data.user.repositories.nodes),
   };
   return (
     <HomePage userData={userData} />
